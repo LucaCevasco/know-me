@@ -40,19 +40,19 @@ function App() {
         
         <div className="z-10 text-center px-4">
           <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-            John Doe
+            Luca Santino Cevasco
           </h1>
           <p className="text-xl text-blue-200 mb-8 font-light">
-            Senior Software Engineer
+            Software Engineer
           </p>
           <div className="flex justify-center gap-6">
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="https://github.com/lucacevasco" className="hover:text-blue-400 transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="https://linkedin.com/in/lucacevasco" className="hover:text-blue-400 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="mailto:thelucazip@gmail.com" className="hover:text-blue-400 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
@@ -72,41 +72,15 @@ function App() {
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
             <SectionTitle icon={Terminal} title="About Me" />
             <p className="text-gray-300 leading-relaxed">
-              A passionate software engineer with 5+ years of experience in building scalable applications.
-              Specialized in React, Node.js, and cloud technologies. Always exploring new technologies
-              and pushing the boundaries of what's possible in web development.
+              Experienced and versatile software engineer with a strong foundation in full-stack development across both web and
+              mobile platforms. Successfully contributed to high-impact projects across diverse industries, including DeFi, finance,
+              and e-commerce, emphasizing clean code, robust architecture, and scalability. Expertise in end-to-end development in
+              complex environments, particularly with blockchain technologies and decentralized finance (DeFi) protocols.
+              Collaborated on high-visibility projects such as those funded by Y Combinator, leveraging skills in bridging traditional
+              finance systems with crypto, developing cross-chain functionalities, and implementing secure and efficient CI/CD
+              processes. Adept at navigating multiple stacks and technologies, blending technical skills with a strategic focus on
+              product enhancement and user satisfaction.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-blue-900/10 to-transparent">
-        <div className="max-w-4xl mx-auto">
-          <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
-            <SectionTitle icon={GraduationCap} title="Education" />
-            <div className="space-y-8">
-              {[
-                {
-                  degree: 'Master of Science in Computer Science',
-                  school: 'Tech University',
-                  period: '2016 - 2018',
-                  description: 'Specialized in Artificial Intelligence and Machine Learning'
-                },
-                {
-                  degree: 'Bachelor of Science in Software Engineering',
-                  school: 'Engineering College',
-                  period: '2012 - 2016',
-                  description: 'Graduated with First Class Honors'
-                }
-              ].map((edu, index) => (
-                <div key={index} className="bg-blue-900/10 p-6 rounded-lg border border-blue-500/20">
-                  <h3 className="text-xl font-semibold text-blue-300">{edu.degree}</h3>
-                  <p className="text-gray-400 mb-2">{edu.school} | {edu.period}</p>
-                  <p className="text-gray-300">{edu.description}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -118,10 +92,22 @@ function App() {
             <SectionTitle icon={Code2} title="Technical Skills" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { name: 'Frontend', skills: ['React', 'TypeScript', 'Tailwind CSS'] },
-                { name: 'Backend', skills: ['Node.js', 'Python', 'PostgreSQL'] },
-                { name: 'DevOps', skills: ['Docker', 'AWS', 'CI/CD'] },
-                { name: 'Tools', skills: ['Git', 'VS Code', 'Jira'] }
+                { 
+                  name: 'Programming Languages', 
+                  skills: ['JavaScript', 'TypeScript', 'Java', 'Python', 'C#','Go', 'Rust', 'Solidity'] 
+                },
+                { 
+                  name: 'Web & Mobile', 
+                  skills: ['React', 'React Native', 'NextJS', 'NodeJS', 'NestJS', 'JAMstack'] 
+                },
+                { 
+                  name: 'Blockchain', 
+                  skills: ['Ethereum', 'DeFi protocols', 'Blockchain Bridges', 'Solana', 'Cosmos'] 
+                },
+                { 
+                  name: 'Cloud & DevOps', 
+                  skills: ['AWS Lambda', 'CI/CD', 'Terraform', 'GitHub Actions'] 
+                }
               ].map((category, index) => (
                 <div key={index} className="bg-blue-900/10 p-6 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors">
                   <h3 className="text-xl font-semibold mb-4 text-blue-300">{category.name}</h3>
@@ -147,28 +133,28 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  title: 'AI-Powered Analytics Platform',
-                  tech: ['React', 'Python', 'TensorFlow'],
-                  description: 'Built a real-time analytics dashboard using machine learning for predictive insights',
-                  link: '#'
+                  title: 'TranscribeMe/Go',
+                  tech: ['NodeJS', 'React', 'AI'],
+                  description: 'Created a bot on WhatsApp and Telegram for free audio-to-text transcription and AI-based summarization. We won the 2023 Innovation Prize in New Technologies (La Nacion & VISA).',
+                  link: 'https://www.transcribeme.app/'
                 },
                 {
-                  title: 'E-commerce Microservices',
-                  tech: ['Node.js', 'Docker', 'Kubernetes'],
-                  description: 'Developed a scalable microservices architecture handling 1M+ daily transactions',
-                  link: '#'
+                  title: 'Ping (YC S22)',
+                  tech: ['React Native', 'Blockchain', 'CI/CD'],
+                  description: 'Developed a hybrid mobile app for financial operations, integrating crypto functionalities across multiple blockchains.',
+                  link: 'https://www.letsping.com/'
                 },
                 {
-                  title: 'Smart Home IoT Platform',
-                  tech: ['React Native', 'MQTT', 'AWS IoT'],
-                  description: 'Created a mobile app for controlling smart home devices with real-time updates',
-                  link: '#'
+                  title: "TAO-MVX Bridge",
+                  tech: ['NodeJS', 'Polkadot', 'DeFi', 'Blockchain'],
+                  description: 'Developed a cross-chain bridge for the TAO token to the MVX ecosystem. +$16M USD were invested in the TAO Bridge, reflecting strong user adoption and trust.',
+                  link: 'https://www.ratherlabs.com/portfolio/tao-bridge'
                 },
                 {
-                  title: 'Blockchain Trading Bot',
-                  tech: ['TypeScript', 'Web3.js', 'GraphQL'],
-                  description: 'Automated trading bot with advanced algorithms and real-time market analysis',
-                  link: '#'
+                  title: "SoundIT",
+                  tech: ['Solidity', 'Ethereum', 'Social Network', "React"],
+                  description: 'SoundIt is a revolutionary audio-centric social decentralized platform (dPlat) challenging the traditional audio value chain. Our work involved modifications to facilitate the creation of custom modules, enabling ERC-2771 inspired meta-transactions compatibility, all while reducing the original contract size.',
+                  link: 'https://soundit.app/'
                 }
               ].map((project, index) => (
                 <div key={index} className="group bg-blue-900/10 p-6 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
@@ -204,16 +190,34 @@ function App() {
             <div className="space-y-12">
               {[
                 {
-                  title: 'Senior Software Engineer',
-                  company: 'Tech Corp',
-                  period: '2020 - Present',
-                  description: 'Led development of scalable microservices architecture'
+                  title: 'Blockchain Engineer - Fullstack Engineer',
+                  company: 'Rather Labs, Inc',
+                  period: 'Nov 2022 - Present',
+                  description: 'Worked on multiple high-impact projects, delivering effective developments and ensuring continuous product improvement. Contributed as a sales engineer in AI projects, estimating project scopes and technical requirements.'
                 },
                 {
-                  title: 'Software Engineer',
-                  company: 'StartUp Inc',
-                  period: '2018 - 2020',
-                  description: 'Developed and maintained multiple React applications'
+                  title: 'Lead Developer',
+                  company: 'Cuéntalo',
+                  period: 'Jan 2023 - May 2023',
+                  description: 'Led the development of an anonymous Q&A platform focusing on promoting positive and healthy interactions. Enhanced user well-being by fostering a safe, supportive, and positive environment.'
+                },
+                {
+                  title: 'Full Stack Engineer',
+                  company: 'TranscribeMe',
+                  period: 'May 2023 - Present',
+                  description: 'Built a WhatsApp/Telegram bot for free, secure transcription with AI-based summarization. Contributed to the product that won the 2023 Innovation Prize in New Technologies (La Nacion & VISA).'
+                },
+                {
+                  title: 'Lead Mobile Developer',
+                  company: 'Ping (YC S22)',
+                  period: 'Sep 2021 - Dec 2022',
+                  description: 'Developed a hybrid mobile app for financial operations, integrating crypto functionalities across multiple blockchains. Established CI/CD processes using GitHub Actions for stable deployment.'
+                },
+                {
+                  title: "Lead Mobile Developer",
+                  company: "Antorcha Digital",
+                  period: "jun 2021 - Sep 2021",
+                  description: "Project Leadership, led development and architectural decisions for hybrid mobile apps using React Native"
                 }
               ].map((job, index) => (
                 <div key={index} className="relative pl-8 border-l-2 border-blue-500/20">
@@ -221,6 +225,43 @@ function App() {
                   <h3 className="text-xl font-semibold text-blue-300">{job.title}</h3>
                   <p className="text-gray-400 mb-2">{job.company} | {job.period}</p>
                   <p className="text-gray-300">{job.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* Education Section */}
+            <section className="py-20 px-4 bg-gradient-to-b from-blue-900/10 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+            <SectionTitle icon={GraduationCap} title="Education" />
+            <div className="space-y-8">
+              {[
+                {
+                  degree: 'Bachelor in Computer Engineering',
+                  school: 'Universidad Argentina de la Empresa (UADE)',
+                  period: '2022 - Expected 2026',
+                  description: 'Buenos Aires, Argentina'
+                },
+                {
+                  degree: 'Bachelor in Computer Engineering',
+                  school: 'Universidad Nacional de La Matanza',
+                  period: '2020 - 2021',
+                  description: 'Buenos Aires, Argentina'
+                },
+                {
+                  degree: 'CS50x Introduction to Computer Science',
+                  school: 'Harvard University',
+                  period: '2020',
+                  description: ''
+                }
+              ].map((edu, index) => (
+                <div key={index} className="bg-blue-900/10 p-6 rounded-lg border border-blue-500/20">
+                  <h3 className="text-xl font-semibold text-blue-300">{edu.degree}</h3>
+                  <p className="text-gray-400 mb-2">{edu.school} | {edu.period}</p>
+                  <p className="text-gray-300">{edu.description}</p>
                 </div>
               ))}
             </div>

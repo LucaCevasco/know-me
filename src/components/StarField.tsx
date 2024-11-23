@@ -13,6 +13,7 @@ const StarField: React.FC = () => {
   const starsRef = useRef<Star[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
   const animationFrameRef = useRef<number>();
+  const intervalRef = useRef<number>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,14 +29,13 @@ const StarField: React.FC = () => {
 
     const createStars = () => {
       const stars: Star[] = [];
-      // Increased number of stars by 25%
-      for (let i = 0; i < 188; i++) {
+      for (let i = 0; i < 288; i++) {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2,
-          vx: 0,
-          vy: 0
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5
         });
       }
       starsRef.current = stars;
@@ -45,7 +45,7 @@ const StarField: React.FC = () => {
       if (!ctx || !canvas) return;
       
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
 
       starsRef.current.forEach((star) => {
         // Calculate distance from mouse
@@ -59,6 +59,17 @@ const StarField: React.FC = () => {
           star.vx -= (dx / distance) * force * 0.5;
           star.vy -= (dy / distance) * force * 0.5;
         }
+
+        // Add random movement
+        if (Math.random() < 0.01) { // 1% chance each frame to change direction
+          star.vx += (Math.random() - 0.5) * 0.2;
+          star.vy += (Math.random() - 0.5) * 0.2;
+        }
+
+        // Limit maximum velocity
+        const maxVelocity = 6;
+        star.vx = Math.max(Math.min(star.vx, maxVelocity), -maxVelocity);
+        star.vy = Math.max(Math.min(star.vy, maxVelocity), -maxVelocity);
 
         // Apply velocity with damping
         star.x += star.vx;
@@ -102,6 +113,16 @@ const StarField: React.FC = () => {
       };
     };
 
+    const addRandomMovement = () => {
+      starsRef.current.forEach(star => {
+        star.vx += (Math.random() - 0.7) * 0.7;
+        star.vy += (Math.random() - 0.7) * 0.7;
+      });
+    };
+
+    // Set up interval for random movement
+    intervalRef.current = setInterval(addRandomMovement, 900);
+
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('mousemove', handleMouseMove);
     
@@ -114,6 +135,9 @@ const StarField: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current); // Clean up interval
       }
     };
   }, []);
